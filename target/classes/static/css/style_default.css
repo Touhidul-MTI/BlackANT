@@ -1,0 +1,95 @@
+body {
+	font-size: 1.4em;
+	color: #111;
+}
+
+.custom-body {
+	background: #FAFAFA;
+}
+
+.navbar {
+	background: #232f3e;
+}
+
+.navbar-default {
+	background: #232f3e;
+}
+
+.navbar>.container .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+  color: #efebe9;
+} 
+.navbar>.container .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover
+	{
+	color: #ffc107;
+}
+
+.mybutton1 {
+	border-top-color: rgb(200, 148, 17);
+	border-right-color: rgb(176, 130, 15);
+	border-bottom-color: rgb(153, 113, 13);
+	border-left-color: rgb(176, 130, 15);
+	background: linear-gradient(to bottom, #f8e3ad, #eeba37);
+	background: -moz-linear-gradient(top, #f8e3ad, #eeba37);
+}
+
+.mybutton1:hover {
+	cursor: pointer;
+	color: #c45500;
+	background: #f3ce72;
+}
+
+.mybutton2 {
+	background: linear-gradient(#FAFAFA, #888);
+}
+
+.mybutton2:hover {
+	background: linear-gradient(#999, #FAFAFA);
+}
+
+.mybackground1 {
+	background: linear-gradient(#f2f2f2, #bfbfbf, #f2f2f2);
+	border-color: #bfbfbf;
+}
+
+.mybackground2 {
+	background: linear-gradient(#999, #f2f2f2);
+	
+}
+
+.mymargin10 {
+	margin: 10px;
+}
+
+.mywidth_full{
+	width: 100%;
+}
+.mywidth_mx100{
+	max-width: 100px;
+}
+.mywidth_mx400{
+	max-width: 400px;
+}
+
+.mycolor1{
+	color: #232f3e;
+}
+
+.mycolor2{
+	color: #f3ce72;
+}
+
+.mycolor3{
+	color:#c45500;
+}
+.mycolor4{
+	color: #eb8014;
+}
+
+/* 
+.bt{
+	color: #4e342e;
+	border: 1px solid #4e342e;
+	background: linear-gradient(#39DDAB, #d7ccc8 );
+	padding: 2px;
+} */

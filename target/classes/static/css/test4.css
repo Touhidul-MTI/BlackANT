@@ -1,0 +1,14 @@
+
+.mymargin10 {
+	margin: 10px;
+}
+
+.mybutton2 {
+	background: linear-gradient(#fff, #FAFAFA);
+	width: 100%;
+}
+
+.mybutton2:hover {
+	background: linear-gradient(#FAFAFA, #999);
+	width: 100%;
+}

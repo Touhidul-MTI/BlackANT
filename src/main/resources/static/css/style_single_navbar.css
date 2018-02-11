@@ -1,0 +1,12 @@
+
+.navbar-header img {
+    max-height: 100%;
+    width: auto;
+}
+.navbar-brand 
+{
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+}

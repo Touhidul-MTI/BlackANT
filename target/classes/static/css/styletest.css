@@ -1,0 +1,62 @@
+body {
+	font-size: 1.4em;
+	color: #111;
+}
+
+.custom-body {
+	background: #FAFAFA;
+}
+
+.mybackground2 {
+	background: linear-gradient(#f2f2f2, #bfbfbf, #f2f2f2);
+	border-color: #bfbfbf;
+}
+
+}
+.navbar-brand {
+	color: yellow;
+}
+
+.navbar-header img {
+	max-height: 100%;
+	width: auto;
+}
+
+.navbar-brand {
+	padding-top: 0px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+.navbar-default {
+	background: #232f3e;
+}
+
+.navbar>.container .navbar-brand, .navbar-default .navbar-nav>li>a {
+	color: #efebe9;
+}
+
+.navbar>.container .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover
+	{
+	color: #ffc107;
+}
+
+.bt {
+	border-top-color: rgb(200, 148, 17);
+	border-right-color: rgb(176, 130, 15);
+	border-bottom-color: rgb(153, 113, 13);
+	border-left-color: rgb(176, 130, 15);
+	background: linear-gradient(to bottom, #f8e3ad, #eeba37);
+	background: -moz-linear-gradient(top, #f8e3ad, #eeba37);
+}
+
+.bt:hover {
+	cursor: pointer;
+	color: #c45500;
+	background: #f3ce72;
+}
+.navbar>.container .navbar-brand:hover,
+.navbar-default .navbar-nav>li>a:hover {
+  color: #f3ce72;
+}
