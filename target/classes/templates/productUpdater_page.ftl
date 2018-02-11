@@ -88,7 +88,7 @@
 						<div class="form-group">
 							<label for="originalPrice" class="col-sm-4 control-label">Original Price</label>
 							<div class="col-sm-8">
-								<input type="number"  class="form-control" name="originalPrice"
+								<input type="number" class="form-control" name="originalPrice"
 									value="${productObj.originalPrice}" required>
 							</div>
 						</div>
@@ -120,7 +120,8 @@
 						</div>
 						<div class="form-group">
 							<label for="productImage" class="col-sm-4 
-							control-label">Product Image ${productObj.productImage}</label>
+							control-label">Product Image
+								${productObj.productImage}</label>
 							<div class="col-sm-8">
 								<input type="file" class="form-control" name="file"
 									value="../product-images/${productObj.productImage}">

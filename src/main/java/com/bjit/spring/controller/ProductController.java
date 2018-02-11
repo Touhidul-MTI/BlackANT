@@ -119,7 +119,7 @@ public class ProductController {
 
 		// update the product
 		System.out.println(file.getOriginalFilename());
-		if(file.isEmpty()) {
+		if (file.isEmpty()) {
 			System.out.println("file cant read");
 		}
 		String fileName = createCustomFileName(file.getOriginalFilename());

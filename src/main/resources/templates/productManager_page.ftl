@@ -106,10 +106,10 @@
 			</a>
 
 		</div>
-<br>
-		<!-- javascript -->
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
+		<br>
+			<!-- javascript -->
+			<script src="../js/jquery.min.js"></script>
+			<script src="../js/bootstrap.min.js"></script>
 
 	</body>
 </html>
