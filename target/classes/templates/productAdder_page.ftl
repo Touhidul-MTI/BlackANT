@@ -60,6 +60,7 @@
 				<br>
 					<form class="form-horizontal" action="productadder" method="POST"
 						modelAttribute="product" enctype="multipart/form-data">
+
 						<div class="form-group">
 							<label for="productName" class="col-sm-4 control-label">Product Name</label>
 							<div class="col-sm-8">
@@ -101,28 +102,84 @@
 						<div class="form-group">
 							<label for="category" class="col-sm-4 control-label">Select Category</label>
 							<div class="col-sm-8">
-								<select class="form-control" name="category" id="categoryId">
-									<#list categories as category>
-									<option value="${category.id}">${category.categoryName}</option>
-									</#list>
-								</select>
-							</div>
-						</div>
+								<div class="row">
+									<div class="col-md-8 col-sm-8">
+										<select class="form-control" name="category" id="categoryId">
+											<#list categories as category>
+											<option value="${category.id}">${category.categoryName}</option>
+											</#list>
+										</select>
+									</div>
+									<div class="col-md-4 col-sm-4">
+										<!-- <a class="btn btn-default"> <span class="glyphicon glyphicon-plus" 
+											aria-hidden="true"></span> New </a> -->
 
-						<div class="form-group">
-							<label for="productImage" class="col-sm-4 
+										<!-- Trigger the modal with a button -->
+										<button type="button" class="btn btn-default mybutton2"
+											data-toggle="modal" data-target="#myModal">
+											<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+											New
+										</button>
+										<!-- Modal -->
+										<div id="myModal" class="modal fade" role="dialog">
+											<div class="modal-dialog">
+												<!-- Modal content -->
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal">&times;
+														</button>
+														<h4 class="modal-title">New Category</h4>
+													</div>
+													<div class="modal-body">
+
+														<div class="form-group">
+															<label for="categoryName" class="col-sm-4 control-label">Category Name</label>
+															<div class="col-sm-8">
+																<input type="text" class="form-control" name="categoryName"
+																	placeholder="Category Name" required>
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="category" class="col-sm-4 control-label">Select Category</label>
+															<div class="col-sm-8">
+																<select class="form-control" name="parentCategoryId"
+																	id="parentCategoryId">
+																	<#list categories as category>
+																	<option value="${category.parentCategoryId}">${category.parentCategoryId}</option>
+																	</#list>
+																</select>
+															</div>
+														</div>
+
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-default"
+															data-dismiss="modal">Close</button>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+
+							<div class="form-group">
+								<label for="productImage" class="col-sm-4 
 							control-label">Product Image</label>
-							<div class="col-sm-8">
-								<input type="file" class="form-control" name="file"
-									required>
+								<div class="col-sm-8">
+									<input type="file" class="form-control" name="file"
+										required>
+								</div>
 							</div>
-						</div>
 
-						<div class="form-group">
-							<div class="col-sm-offset-4 col-sm-8">
-								<button type="submit" class="btn btn-default mybutton1">Submit</button>
+							<div class="form-group">
+								<div class="col-sm-offset-4 col-sm-8">
+									<button type="submit" class="btn btn-default mybutton1">Submit</button>
+								</div>
 							</div>
-						</div>
 					</form>
 
 					<a class="btn btn-default mybutton2 pull-right" href="/manageproducts">

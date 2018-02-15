@@ -7,12 +7,12 @@
 					<title>BlackANT</title>
 
 					<!-- css -->
-					<link href="../css/bootstrap.min.css" rel="stylesheet">
-						<link href="../css/animate.css" rel="stylesheet">
-							<link rel="stylesheet" href="../css/font-awesome.min.css">
-								<link rel="stylesheet" href="../css/style_default.css">
-									<link rel="stylesheet" href="../css/style_double_navbar.css">
-										<link rel="stylesheet" href="../css/style_sidebar_category.css">
+					<link href="css/bootstrap.min.css" rel="stylesheet">
+						<link href="css/animate.css" rel="stylesheet">
+							<link rel="stylesheet" href="css/font-awesome.min.css">
+								<link rel="stylesheet" href="css/style_default.css">
+									<link rel="stylesheet" href="css/style_double_navbar.css">
+										<link rel="stylesheet" href="css/style_sidebar_category.css">
 
 	</head>
 	<body class="custom-body">
@@ -233,21 +233,18 @@
 					</div>
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-12">
-
 					<h2>All products</h2>
 					<div class="table-responsive">
-						<table class="table table-bordered table-stripped text-center">
-							<tr class="mybackground2">
-								<th class="text-center">Product Id</th>
-								<th class="text-center">Product Name</th>
-								<th class="text-center">Product Quantity</th>
-								<th class="text-center">Original Price</th>
-								<th class="text-center">Discount Price</th>
-								<th class="text-center">Product description</th>
-								<th class="text-center">Image</th>
-								<th class="text-center">Category</th>
-								<th class="text-center">Edit</th>
-								<th class="text-center">Delete</th>
+						<table class="table table-bordered">
+							<tr>
+								<th>Product Id</th>
+								<th>Product Name</th>
+								<th>Product Quantity</th>
+								<th>Original Price</th>
+								<th>Discount Price</th>
+								<th>Product description</th>
+								<th>Image</td>
+								<th>Category</th>
 							</tr>
 							<#list products as product>
 							<tr>
@@ -256,10 +253,8 @@
 								<td>${product.productQuantity}</td>
 								<td>${product.originalPrice}</td>
 								<td>${product.discountPrice}</td>
-								<td class="mywidth_mx400">${product.productDescription}</td>
-								<td>
-									<img class="mywidth_mx100 img-responsive" src="../product-images/${product.productImage}">
-								</td>
+								<td>${product.productDescription}</td>
+								<td>${product.productImage}</td>
 								<td>${product.category.getCategoryName()}</td>
 							</tr>
 							</#list>
@@ -272,8 +267,8 @@
 
 
 		<!-- javascript -->
-		<script src="../js/jquery.min.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 
 	</body>
 </html>

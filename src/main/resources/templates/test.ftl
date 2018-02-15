@@ -7,12 +7,12 @@
 					<title>BlackANT</title>
 
 					<!-- css -->
-					<link href="css/bootstrap.min.css" rel="stylesheet">
-						<link href="css/animate.css" rel="stylesheet">
-							<link rel="stylesheet" href="css/font-awesome.min.css">
-								<link rel="stylesheet" href="css/style_default.css">
-									<link rel="stylesheet" href="css/style_double_navbar.css">
-										<link rel="stylesheet" href="css/style_sidebar_category.css">
+					<link href="../css/bootstrap.min.css" rel="stylesheet">
+						<link href="../css/animate.css" rel="stylesheet">
+							<link rel="stylesheet" href="../css/font-awesome.min.css">
+								<link rel="stylesheet" href="../css/style_default.css">
+									<link rel="stylesheet" href="../css/style_double_navbar.css">
+										<link rel="stylesheet" href="../css/style_sidebar_category.css">
 
 	</head>
 	<body class="custom-body">
@@ -233,42 +233,77 @@
 					</div>
 				</div>
 				<div class="col-md-9 col-sm-9 col-xs-12">
-					<h2>All products</h2>
-					<div class="table-responsive">
-						<table class="table table-bordered">
-							<tr>
-								<th>Product Id</th>
-								<th>Product Name</th>
-								<th>Product Quantity</th>
-								<th>Original Price</th>
-								<th>Discount Price</th>
-								<th>Product description</th>
-								<th>Image</td>
-								<th>Category</th>
-							</tr>
-							<#list products as product>
-							<tr>
-								<td>${product.id}</td>
-								<td>${product.productName}</td>
-								<td>${product.productQuantity}</td>
-								<td>${product.originalPrice}</td>
-								<td>${product.discountPrice}</td>
-								<td>${product.productDescription}</td>
-								<td>${product.productImage}</td>
-								<td>${product.category.getCategoryName()}</td>
-							</tr>
-							</#list>
-						</table>
-					</div>
+
+					<!-- menu -->
+					<div id="MainMenu" class="my-side-menu">
+						<h3>Categories</h3>
+						<div class="list-group panel">
+							<a href="#" class="list-group-item list-group-item-success"
+								data-parent="#MainMenu">Vehicle -Item 1</a>
+
+							<a href="#" class="list-group-item list-group-item-success"
+								data-parent="#MainMenu">Mobile -Item 2</a>
+
+							<a href="#demo3" class="list-group-item list-group-item-success"
+								data-toggle="collapse" data-parent="#MainMenu">
+								Coothing -Item 3
+								<i class="fa fa-caret-down"></i>
+							</a>
+							<div class="collapse" id="demo3">
+								<a href="#SubMenu1" class="list-group-item" data-toggle="collapse"
+									data-parent="#SubMenu1">
+									Male -Subitem 1
+									<i class="fa fa-caret-down"></i>
+								</a>
+								<div class="collapse list-group-submenu" id="SubMenu1">
+									<a href="#" class="list-group-item" data-parent="#SubMenu1">T-Shirt
+										-Subitem 1 a</a>
+									<a href="#" class="list-group-item" data-parent="#SubMenu1">Pant -Subitem
+										2 b</a>
+									<a href="#SubSubMenu1" class="list-group-item" data-toggle="collapse"
+										data-parent="#SubSubMenu1">
+										Shirt -Subitem 3 c
+										<i class="fa fa-caret-down"></i>
+									</a>
+									<div class="collapse list-group-submenu list-group-submenu-1"
+										id="SubSubMenu1">
+										<a href="#" class="list-group-item" data-parent="#SubSubMenu1">Full shirt
+											-Sub sub item
+											1</a>
+										<a href="#" class="list-group-item" data-parent="#SubSubMenu1">Half shirt
+											-Sub sub item
+											2</a>
+									</div>
+									<a href="#" class="list-group-item" data-parent="#SubMenu1">Panjabi
+										-Subitem 4 d</a>
+								</div><!-- end of SubMenu1 -->
+
+								<a href="javascript:;" class="list-group-item">Female -Subitem 2</a>
+								<a href="javascript:;" class="list-group-item">Child -Subitem 3</a>
+							</div><!-- end of demo3 -->
+
+							<a href="#demo4" class="list-group-item list-group-item-success"
+								data-toggle="collapse" data-parent="#MainMenu">
+								Accessories -Item 4
+								<i class="fa fa-caret-down"></i>
+							</a>
+							<div class="collapse" id="demo4">
+								<a href="" class="list-group-item">Kitchen -Subitem 1</a>
+								<a href="" class="list-group-item">Mobile -Subitem 2</a>
+								<a href="" class="list-group-item">Computer -Subitem 3</a>
+							</div>
+						</div>
+					</div><!-- end of MainMenu -->
 				</div>
+
 			</div>
 
 		</div>
 
 
 		<!-- javascript -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 
 	</body>
 </html>

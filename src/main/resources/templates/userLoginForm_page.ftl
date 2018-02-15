@@ -25,7 +25,7 @@
 			</div>
 
 			<form class="form-signin panel panel-default mybackground1"
-				action="adminVarify" method="POST" modelAttribute="adminModel">
+				action="/login" method="POST" modelAttribute="adminModel">
 				<h2 class="form-signin-heading">Sign in</h2>
 
 				<label for="inputEmail" class="sr-only">Email address</label>

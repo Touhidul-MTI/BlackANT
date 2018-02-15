@@ -6,13 +6,13 @@
 				<meta name="description" content="Muhammad Touhidul Islam">
 					<title>BlackANT</title>
 
-					<!-- css -->
-					<link href="css/bootstrap.min.css" rel="stylesheet">
-						<link href="css/animate.css" rel="stylesheet">
-							<link rel="stylesheet" href="css/font-awesome.min.css">
-								<link rel="stylesheet" href="css/styletest.css">
-									<link rel="stylesheet" href="css/style_form.css">
-
+		<!-- css -->
+					<link href="../css/bootstrap.min.css" rel="stylesheet">
+						<link href="../css/animate.css" rel="stylesheet">
+							<link rel="stylesheet" href="../css/font-awesome.min.css">
+								<link rel="stylesheet" href="../css/style_default.css">
+									<link rel="stylesheet" href="../css/style_double_navbar.css">
+										<link rel="stylesheet" href="../css/style_form.css">
 	</head>
 	<body class="custom-body">
 		<!--navigation starts -->
@@ -192,8 +192,8 @@
 
 
 		<!-- javascript -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 
 	</body>
 </html>

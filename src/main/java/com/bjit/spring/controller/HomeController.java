@@ -6,10 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-	@GetMapping("/")
+	@GetMapping({"/", "/index", "/home"})
 	String home(ModelMap modal) {
-		modal.addAttribute("title", "Dear Trainee");
-		modal.addAttribute("message", "Welcome to SpringBoot");
 		return "index_page";
 	}
 
@@ -26,7 +24,7 @@ public class HomeController {
 	
 	@GetMapping(value = "/login")
 	public String userLogin() {
-		return "userLoginForm_page";
+		return "securitytest";
 	}
 
 	@GetMapping(value = "/register")

@@ -33,11 +33,18 @@ public class ProductController {
 	@Autowired
 	private CategoryController categoryController;
 
+	// String filePath =
+	// "E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images";
+	String filePath = "/home/hp/eclipse-workspace/BlackANT/src/main/resources/static/product-images/";
+
 	@GetMapping(value = "allproducts")
 	public String getAllProducts(Model model) {
 		List<Product> products = new ArrayList<>();
 		productRepository.findAll().forEach(products::add);
 		model.addAttribute("products", products);
+		
+		List<Category> categories = categoryController.getAllCategories();
+		model.addAttribute("categories", categories);
 
 		return "test";
 	}
@@ -67,14 +74,17 @@ public class ProductController {
 
 		String fileName = createCustomFileName(file.getOriginalFilename());
 
-		String filePath = "E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images";
+		// String filePath =
+		// "E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images";
+		// String filePath =
+		// "/home/hp/eclipse-workspace/BlackANT/src/main/resources/static";
+
 		File path = new File(filePath);
 
 		if (!path.exists()) {
 			path.mkdirs();
 		}
-		// System.out.println(path.getAbsolutePath());
-		// System.out.println(fileName);
+		
 		try {
 			Files.copy(file.getInputStream(), Paths.get(filePath, fileName));
 		} catch (IOException e) {
@@ -106,8 +116,11 @@ public class ProductController {
 
 		// stuff to delete the existing product image
 		String existingImageFileName = productRepository.findOne(product.getId()).getProductImage();
-		File fileToDelete = new File("E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images\\"
-				+ existingImageFileName);
+
+		// File fileToDelete = new
+		// File("E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images\\"
+		// + existingImageFileName);
+		File fileToDelete = new File(filePath + existingImageFileName);
 
 		if (fileToDelete.exists()) {
 			if (fileToDelete.delete()) {
@@ -124,7 +137,8 @@ public class ProductController {
 		}
 		String fileName = createCustomFileName(file.getOriginalFilename());
 
-		String filePath = "E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images";
+		// String filePath =
+		// "E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images";
 		File path = new File(filePath);
 
 		if (!path.exists()) {
@@ -148,8 +162,11 @@ public class ProductController {
 
 		// stuff to delete the product image
 		Product product = productRepository.findOne(productId);
-		File fileToDelete = new File("E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images\\"
-				+ product.getProductImage());
+
+		// File fileToDelete = new
+		// File("E:\\BJIT_work\\J2EE\\BlackANT\\src\\main\\resources\\static\\product-images\\"
+		// + product.getProductImage());
+		File fileToDelete = new File(filePath + product.getProductImage());
 
 		if (fileToDelete.exists()) {
 			if (fileToDelete.delete()) {
