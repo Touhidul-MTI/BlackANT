@@ -1,4 +1,3 @@
-
 //---------Pagination starts here------
 var pages;
 var numberOfElementsInEachPage = 3;
@@ -56,6 +55,10 @@ function showPage(pageNumber) {
         	+ '<a onclick=deleteEmployee($(this),'+val.id+')>'
 			+ '<span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>'
 			+ '</td>'
+			+ '<td>'
+			+ '<a href="/updateemployee/'+val.id+'">'
+			+ '<span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>'
+			+ '</td>'
 			+ "</tr>";
 		}
 	}
@@ -65,22 +68,48 @@ function showPage(pageNumber) {
 }
 
 function deleteEmployee(thisTable, employeeId) {
+	if (confirm('Employee will be deleted, are you sure?')) {
+		
+		$.ajax({
+			type : "DELETE",
+			url : 'deleteemployee/' + employeeId,
 
-	$.ajax({
-		type : "DELETE",
-		url : 'deleteemployee/' + employeeId,
+			success : function(response) {
+				$('#resultContainer').text(
+						'Id = ' + employeeId + ' has been deleted!');
+				$('#resultContainer').show();
 
-		success : function(response) {
-			$('#resultContainer').text('Id = ' + employeeId + ' has been deleted!');
-			$('#resultContainer').show();
+				thisTable.closest("tr").remove();
 
-			thisTable.closest("tr").remove();
+				window.location.reload();
+			},
 
-			window.location.reload();
-		},
-
-		failure : function(errMsg) {
-			console.log(errMsg.toString())
-		}
-	});
+			failure : function(errMsg) {
+				console.log(errMsg.toString())
+			}
+		});
+	}
 }
+
+//function updateEmployee(id) {
+//	
+//	$.ajax({
+//		type : "post",
+//		url : 'updateemployee/' + employeeId,
+//
+//		success : function(response) {
+//			$('#resultContainer').text(
+//					'Id = ' + employeeId + ' has been deleted!');
+//			$('#resultContainer').show();
+//
+//			thisTable.closest("tr").remove();
+//
+//			window.location.reload();
+//		},
+//
+//		failure : function(errMsg) {
+//			console.log(errMsg.toString())
+//		}
+//	});
+//}
+

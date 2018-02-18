@@ -87,6 +87,7 @@ $(document).ready(function () {
 							<th class="text-center">Email</th>
 							<th class="text-center">Designation</th>
 							<th class="text-center">Delete</th>
+							<th class="text-center">Edit</th>
 						</tr>
 					</thead>
 				</table>
