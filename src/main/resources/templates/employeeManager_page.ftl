@@ -12,9 +12,26 @@
 							<link rel="stylesheet" href="../css/font-awesome.min.css">
 								<link rel="stylesheet" href="../css/style_default.css">
 									<link rel="stylesheet" href="../css/style_single_navbar.css">
-										<script type="text/javascript" src="../js/app.js"></script>
+										<script src="../js/jquery.min.js"></script>
+										<script type="text/javascript" src="../js/pagination_blackant.js"></script>
+<!-- 
+written this document ready inside header, 
+otherwise get method is called twice which makes the table value double
+-->
+<script type="text/javascript">
+$(document).ready(function () {
+	$.post({
+		url: '/employeepagination',
+		success : function(response) { 
+			setTable(response);
+		},
+		error: function() {
+			console.log('cant read');
+		}
+	})
+});
+</script>
 
-										
 	</head>
 	<body class="custom-body">
 		<!--navigation starts -->
@@ -57,86 +74,36 @@
 
 		<div class="container">
 			<h2 class="text-center">All Employees</h2>
+			
+			<p id="resultContainer" class="text-danger"></p>
 			<div class="table-responsive">
-				<table class="table table-bordered table-stripped text-center">
-					<tr class="mybackground2">
-						<th class="text-center">Id</th>
-						<th class="text-center">First name</th>
-						<th class="text-center">Last name</th>
-						<th class="text-center">Email</th>
-						<th class="text-center">Designation</th>
-					</tr>
-					<#list employees as employee>
-					<tr>
-						<td>${employee.id}</td>
-						<td>${employee.firstName}</td>
-						<td>${employee.lastName}</td>
-						<td>${employee.email}</td>
-						<td>${employee.designation}</td>
-
-						<td>
-							<a href="">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-							</a>
-						</td>
-						<td>
-							<a href=""
-								onclick="if(confirm('Product will be deleted, are you sure?')){ return true; }else { return false; }">
-								<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-							</a>
-						</td>
-					</tr>
-					</#list>
+				<table id="tableId" class="table table-bordered table-stripped text-center">
+					<thead>
+						<tr class="mybackground2">
+							<th class="text-center">Serial No.</th>
+							<th class="text-center">Id</th>
+							<th class="text-center">First Name</th>
+							<th class="text-center">Last Name</th>
+							<th class="text-center">Email</th>
+							<th class="text-center">Designation</th>
+							<th class="text-center">Delete</th>
+						</tr>
+					</thead>
 				</table>
 			</div>
 			<a class="btn btn-default mybutton1 pull-right" href="/addemployee">
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-				Add emplyee
+				Add Employee
 			</a>
+			<div class="float-right">
+				<ul class="pager" id="pageId">
+				</ul>
+			</div>
 		</div>
+		
 		<br>
 
-
-			<div class="container panel panel-default">
-				<#list employees as employee>
-				<hr>
-					<div class="row">
-
-						<div class="col-md-2 col-sm-2 col-xs-2">${employee.id}</div>
-						<div class="col-md-2 col-sm-2 col-xs-2">${employee.firstName}</div>
-						<div class="col-md-2 col-sm-2 col-xs-2">${employee.lastName}</div>
-						<div class="col-md-2 col-sm-2 col-xs-2">${employee.email}</div>
-						<div class="col-md-2 col-sm-2 col-xs-2">${employee.designation}</div>
-
-						<div class="col-md-1 col-sm-1">
-							<a href="">
-								<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-							</a>
-						</div>
-						<div class="col-md-1 col-sm-1">
-							<a href="/deleteempoyee/${employee.id}"
-								onclick="if(confirm('Product will be deleted, are you sure?')){ return true; }else { return false; }">
-								<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-							</a>
-						</div>
-					</div>
-					<hr>
-						</#list>
-			</div>
-
-			<button onclick="take()" class="text-center">show Data</button>
-
-			<div id="tableId" class="table-responsive">
-
-			</div>
-			
-			
-
-
-			<br>
-				<!-- javascript -->
-				<script src="../js/jquery.min.js"></script>
-				<script src="../js/bootstrap.min.js"></script>
-
+			<!-- javascript -->
+			<script src="../js/bootstrap.min.js"></script>
 	</body>
 </html>

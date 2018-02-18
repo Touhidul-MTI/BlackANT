@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>BORAJI.COM</title>
+				<title>BlackANT</title>
 				<!-- css -->
 				<link href="../css/bootstrap.min.css" rel="stylesheet">
 					<link href="../css/animate.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 										}
 									</style>
 									<script src="../js/jquery.min.js"></script>
-									<script src="../js/ajax.js"></script>
+									<script src="../js/employee_adder_blackant.js"></script>
 	</head>
 
 	<body class="custom-body">
@@ -55,8 +55,11 @@
 
 
 		<div class="container">
-
-			<form class="form-horizontal" action="saveEmployee" method="post"
+			<div class="col-md-2 col-sm-2">
+			</div>
+			<div class="col-md-8 col-sm-8 panel panel-default">
+			
+			<form id="formId" class="form-horizontal" action="saveEmployee" method="post"
 				name="employeeForm">
 
 				<h3 class="text-center">Employee Input Form</h3>
@@ -99,16 +102,23 @@
 					</div>
 				</div>
 
+				<div id="resultContainer" style="display: none;">
+					<pre style="color: green;">
+						<code></code>
+					</pre>
+				</div>
+				<a class="btn btn-default mybutton2 pull-left" href="/manageemployees">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+					</span>Back</a>
 			</form>
-			<!-- Result Container -->
-			<div id="resultContainer" style="display: none;">
-				<hr />
-				<h4 style="color: green;">JSON Response From Server</h4>
-				<pre style="color: green;">
-					<code></code>
-				</pre>
+			
 			</div>
+			
+			<div class="col-md-2 col-sm-2 col-xs-2">
+			</div>
+			
 		</div>
+
 		<script src="../js/bootstrap.min.js"></script>
 	</body>
 </html>

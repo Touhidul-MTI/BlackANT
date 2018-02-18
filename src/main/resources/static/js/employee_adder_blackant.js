@@ -7,11 +7,13 @@ $(function() {
          data : $('form[name=employeeForm]').serialize(),
          success : function(res) {         
             if(res.validated){
-        $('#resultContainer pre code').text(JSON.stringify(res.employee));
+            	$('#formId')[0].reset();
+            	$('#resultContainer pre code').text("Successfully added!");
                $('#resultContainer').show();
                
                /* $(window.location).attr('href', '/SpringAJAX/emp'); */
             }else{
+            	 $('#resultContainer').hide();
               $.each(res.errorMessages,function(key,value){
                $('input[name='+key+']').after('<span class="error">'+value+'</span>');
               });
